@@ -38,7 +38,7 @@ class LinkedList {
   }
 
   //Insert at index
-  insertAt(data, index) {
+  insertAt(index, data) {
     //If index is out of range
     if (index < 0 || index > this.size) {
       return;
@@ -126,19 +126,19 @@ class LinkedList {
 const ll = new LinkedList();
 ll.insertFirst(100);
 ll.insertFirst(200);
-ll.insertFirst(70);
+// ll.insertFirst(70);
 
-ll.insertLast(400);
+// ll.insertLast(400);
 
-// ll.printListData();
+// // ll.printListData();
 
-ll.insertAt(900, 0);
+// ll.insertAt(0, 900);
 
-ll.insertAt(140, 2);
-ll.insertAt(140, -19);
+// ll.insertAt(2, 140);
+// ll.insertAt(-19, 140);
 
 // let res = ll.getAt(3);
 // console.log(res);
-ll.removeAt(-26);
-ll.clearList();
+ll.removeAt(1);
+// ll.clearList();
 ll.printListData();
