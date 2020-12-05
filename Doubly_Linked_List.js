@@ -144,11 +144,9 @@ class DoublyLinkedList {
     let current = this.head;
     while (current) {
       console.log({
-        head: this.head.data,
-        tail: this.tail?.data,
         data: current.data,
-        next: current.next?.data,
-        previous: current.previous?.data,
+        head: this.head.data,
+        tail: this.tail.data,
       });
       current = current.next;
     }
