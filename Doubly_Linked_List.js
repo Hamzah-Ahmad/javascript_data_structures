@@ -1,4 +1,4 @@
-//Explanation: Linear data structure .The elements in the linked list (node) are not stored in sequential memory locations. Instead the elements are linked toether using pointers.
+//Explanation: Data structure similar to linked list. Differences are that each node also has a pointer to its previous node alongwith a pointer to the next node. The data structure also has a tail property that points to the last node of the list.
 
 class Node {
   constructor(data, next = null, previous = null) {
