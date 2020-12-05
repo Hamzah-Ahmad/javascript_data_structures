@@ -7,9 +7,10 @@ class Node {
   }
 }
 
-class LinkedList {
+class DoublyLinkedList {
   constructor() {
     this.head = null; //List will be empty when class is instantiated so head is null.
+    this.tail = null;
     this.size = 0;
   }
 
@@ -40,7 +41,7 @@ class LinkedList {
   //Insert at index
   insertAt(data, index) {
     //If index is out of range
-    if (index < 0 || index > this.size) {
+    if (index > 0 && index > this.size) {
       return;
     }
 
@@ -85,7 +86,7 @@ class LinkedList {
   //Remove at index
   removeAt(index) {
     //Handling if index out of range
-    if (index < 0 || index > this.size) {
+    if (index > 0 && index > this.size) {
       return;
     }
     let current = this.head;
@@ -123,7 +124,7 @@ class LinkedList {
   }
 }
 
-const ll = new LinkedList();
+const ll = new DoublyLinkedList();
 ll.insertFirst(100);
 ll.insertFirst(200);
 ll.insertFirst(70);
@@ -135,10 +136,9 @@ ll.insertLast(400);
 ll.insertAt(900, 0);
 
 ll.insertAt(140, 2);
-ll.insertAt(140, -19);
 
 // let res = ll.getAt(3);
 // console.log(res);
-ll.removeAt(-26);
+ll.removeAt(1);
 ll.clearList();
 ll.printListData();
