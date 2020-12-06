@@ -3,7 +3,6 @@
 class Queue {
   constructor() {
     this.items = [];
-    this.count = 0;
   }
 
   //Add item to the end of the queue
@@ -29,6 +28,9 @@ class Queue {
     return this.items[0];
   }
 
+  isEmpty() {
+    return this.items.length === 0;
+  }
   printQueue() {
     if (this.items.length === 0) {
       console.log("Queue is empty");
