@@ -73,6 +73,7 @@ class LinkedList {
     let current = this.head;
     let count = 0;
     while (current) {
+      //getAt uses current instead of current.next in the while loop because we want the loop to run at the final element as well. In other while loops, we only needed to see if the next element was the final element, but here we need to use that element too
       if (count == index) {
         return current.data;
       }
@@ -126,19 +127,10 @@ class LinkedList {
 const ll = new LinkedList();
 ll.insertFirst(100);
 ll.insertFirst(200);
-// ll.insertFirst(70);
-
-// ll.insertLast(400);
-
-// // ll.printListData();
-
-// ll.insertAt(0, 900);
-
-// ll.insertAt(2, 140);
-// ll.insertAt(-19, 140);
-
-// let res = ll.getAt(3);
-// console.log(res);
-ll.removeAt(1);
-// ll.clearList();
+ll.insertFirst(300);
+ll.insertFirst(400);
+// ll.insertFirst(500);
+// ll.insertFirst(600);
+ll.reverseList();
+// console.log(ll.getAt(5));
 ll.printListData();
