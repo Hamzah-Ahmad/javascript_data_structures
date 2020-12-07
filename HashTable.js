@@ -6,10 +6,13 @@ class HashTable {
   }
   getItem(key) {
     const indx = this.hash(key, this.table.length);
-    if (!this.table[indx]) {
+    if (!this.table[indx] || !this.table[indx]) {
       return null;
     }
-    return this.table[indx].find((x) => x[0] === key)[1];
+    let item = this.table[indx].find((x) => x[0] === key);
+    if (!item) return undefined;
+
+    return item[1];
   }
 
   setItem(key, value) {
@@ -23,6 +26,16 @@ class HashTable {
     }
   }
 
+  remove(key) {
+    const indx = this.hash(key, this.table.length);
+    if (!this.table[indx]) {
+      console.log("Element with provided key not found in table");
+      return null;
+    }
+    let indexToRemove = this.table[indx].findIndex((x) => x[0] === key);
+    this.table[indx].splice(indexToRemove, 1);
+    console.log(this.table[indx]);
+  }
   hash(str, size) {
     let hash = 0;
 
@@ -38,8 +51,13 @@ const myTable = new HashTable();
 myTable.setItem("firstName", "Hamzah");
 myTable.setItem("lastName", "Ahmad");
 myTable.setItem("age", 24);
+myTable.setItem("test1", 1);
+myTable.setItem("test2", 2);
 
+// console.log(myTable.getItem("firstName"));
+// console.log(myTable.getItem("lastName"));
+// console.log(myTable.getItem("age"));
+// myTable.remove("firstName");
 console.log(myTable.getItem("firstName"));
-console.log(myTable.getItem("lastName"));
-console.log(myTable.getItem("age"));
-console.log(myTable);
+
+console.table(JSON.stringify(myTable, null, 2));
